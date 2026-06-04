@@ -1,0 +1,36 @@
+import { createSwapApp } from "./app/createSwapApp.js";
+
+const elements = {
+  form: document.querySelector("#swap-form"),
+  fromAmount: document.querySelector("#from-amount"),
+  toAmount: document.querySelector("#to-amount"),
+  fromToken: document.querySelector("#from-token"),
+  toToken: document.querySelector("#to-token"),
+  fromIcon: document.querySelector("#from-icon"),
+  toIcon: document.querySelector("#to-icon"),
+  fromUsd: document.querySelector("#from-usd"),
+  toUsd: document.querySelector("#to-usd"),
+  fromBalance: document.querySelector("#from-balance"),
+  toBalance: document.querySelector("#to-balance"),
+  rateLine: document.querySelector("#rate-line"),
+  feeLine: document.querySelector("#fee-line"),
+  error: document.querySelector("#form-error"),
+  submit: document.querySelector("#submit-button"),
+  buttonCopy: document.querySelector(".button-copy"),
+  switchButton: document.querySelector("#switch-button"),
+  maxButton: document.querySelector("#max-button"),
+  confirmation: document.querySelector("#confirmation"),
+  confirmationCopy: document.querySelector("#confirmation-copy"),
+  watchlist: document.querySelector("#watchlist"),
+  priceSource: document.querySelector("#price-source"),
+  assetCount: document.querySelector("#asset-count"),
+  topRate: document.querySelector("#top-rate"),
+  statusPill: document.querySelector("#status-pill"),
+  menuButton: document.querySelector("#menu-button"),
+  closeMenuButton: document.querySelector("#close-menu-button"),
+  sidebar: document.querySelector("#mobile-sidebar"),
+  sidebarBackdrop: document.querySelector("#sidebar-backdrop"),
+  sidebarLinks: document.querySelectorAll(".sidebar-links a"),
+};
+
+createSwapApp(elements).init();
