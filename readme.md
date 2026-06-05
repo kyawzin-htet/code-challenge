@@ -19,11 +19,11 @@ This repository contains my solutions for the 99Tech code challenge.
 
 Desktop:
 
-![FluxSwap desktop screenshot](src/problem2/app-image/fluxswap_desktop.png)
+![FluxSwap desktop screenshot](src/problem2/appScreenshots/fluxswap_desktop.png)
 
 Mobile:
 
-![FluxSwap mobile screenshot](src/problem2/app-image/fluxswap_mobile.png)
+![FluxSwap mobile screenshot](src/problem2/appScreenshots/fluxswap_mobile.png)
 
 More implementation details are available in `src/problem2/readme.md`.
 
