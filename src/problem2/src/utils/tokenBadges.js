@@ -6,7 +6,13 @@ const tokenColors = {
   WBTC: "#ff9700",
 };
 
-export function tokenBadgeUrl(currency) {
+const TOKEN_ICON_BASE_URL = "https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens";
+
+export function tokenIconUrl(currency) {
+  return `${TOKEN_ICON_BASE_URL}/${encodeURIComponent(currency)}.svg`;
+}
+
+export function fallbackTokenBadgeUrl(currency) {
   const color = tokenColors[currency] || "#08bc88";
   const label = encodeURIComponent((currency || "?").slice(0, 1));
   const svg = `
@@ -19,6 +25,14 @@ export function tokenBadgeUrl(currency) {
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
 
+export function tokenBadgeUrl(currency) {
+  return tokenIconUrl(currency);
+}
+
 export function updateTokenBadge(img, currency) {
+  img.onerror = () => {
+    img.onerror = null;
+    img.src = fallbackTokenBadgeUrl(currency);
+  };
   img.src = tokenBadgeUrl(currency);
 }

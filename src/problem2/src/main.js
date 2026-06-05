@@ -31,6 +31,7 @@ const elements = {
   sidebar: document.querySelector("#mobile-sidebar"),
   sidebarBackdrop: document.querySelector("#sidebar-backdrop"),
   sidebarLinks: document.querySelectorAll(".sidebar-links a"),
+  pageLoader: document.querySelector("#page-loader"),
 };
 
 createSwapApp(elements).init();

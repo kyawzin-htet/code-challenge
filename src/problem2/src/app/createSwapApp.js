@@ -40,6 +40,7 @@ export function createSwapApp(elements) {
       state.isLoading = false;
       hydrateControls();
       updateQuote();
+      hidePageLoader();
     }
   }
 
@@ -214,6 +215,19 @@ export function createSwapApp(elements) {
 
   function hideConfirmation() {
     elements.confirmation.hidden = true;
+  }
+
+  function hidePageLoader() {
+    if (!elements.pageLoader) {
+      return;
+    }
+
+    elements.pageLoader.classList.add("is-hidden");
+    elements.pageLoader.setAttribute("aria-hidden", "true");
+
+    window.setTimeout(() => {
+      elements.pageLoader.hidden = true;
+    }, 240);
   }
 
   return { init };

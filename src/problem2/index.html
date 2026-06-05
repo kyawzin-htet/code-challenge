@@ -4,12 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f2f7f5" />
+  <meta name="theme-color" content="#000000" />
   <title>FluxSwap</title>
   <link rel="stylesheet" href="./src/styles/main.css" />
 </head>
 
 <body>
+  <div class="page-loader" id="page-loader" role="status" aria-live="polite">
+    <div class="loader-card">
+      <span class="loader-mark" aria-hidden="true"></span>
+      <strong>FluxSwap</strong>
+      <p>Loading market data</p>
+      <span class="loader-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+    </div>
+  </div>
+
   <header class="site-header">
     <nav class="nav-shell" aria-label="Main navigation">
       <a class="brand" href="#" aria-label="FluxSwap home">

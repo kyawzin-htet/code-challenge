@@ -1,4 +1,5 @@
 import { featuredMarkets } from "../data/featuredMarkets.js";
+import { fallbackTokenBadgeUrl, tokenBadgeUrl } from "../utils/tokenBadges.js";
 import { formatMarketCurrency } from "../utils/formatters.js";
 
 export function renderMarketList(container, getToken) {
@@ -6,14 +7,21 @@ export function renderMarketList(container, getToken) {
     .map((market) => {
       const token = getToken(market.currency);
       const price = token ? formatMarketCurrency(token.price, market.currency) : "--";
-      const letter = market.currency === "WBTC" ? "W" : market.currency[0];
       const changeClass = market.negative ? "negative" : "";
       const itemClass = market.featured ? "watchlist-item featured" : "watchlist-item";
 
       return `
         <div class="${itemClass}">
           <div class="watchlist-token">
-            <span class="coin-avatar ${market.className}" aria-hidden="true">${letter}</span>
+            <img
+              class="coin-avatar ${market.className}"
+              src="${tokenBadgeUrl(market.currency)}"
+              alt=""
+              width="40"
+              height="40"
+              aria-hidden="true"
+              onerror="this.onerror=null;this.src='${fallbackTokenBadgeUrl(market.currency)}';"
+            />
             <div>
               <strong>${market.currency}</strong>
               <span>${market.name}</span>
