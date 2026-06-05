@@ -15,6 +15,16 @@ This repository contains my solutions for the 99Tech code challenge.
 
 `src/problem2` contains a Vite-powered currency swap interface.
 
+### App Screenshots
+
+Desktop:
+
+![FluxSwap desktop screenshot](src/problem2/app-image/fluxswap_desktop.png)
+
+Mobile:
+
+![FluxSwap mobile screenshot](src/problem2/app-image/fluxswap_mobile.png)
+
 More implementation details are available in `src/problem2/readme.md`.
 
 ## Problem 3
